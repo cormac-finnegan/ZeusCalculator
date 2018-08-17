@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ait.calc.view.Driver">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Calculator">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="95.0" prefWidth="904.0">
+                                 <children>
+                                    <TextField fx:id="input" alignment="BOTTOM_RIGHT" prefHeight="96.0" prefWidth="900.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font></TextField>
+                                    <Label fx:id="equation" alignment="CENTER_RIGHT" layoutX="282.0" layoutY="6.0" prefHeight="30.0" prefWidth="609.0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="cancel" mnemonicParsing="false" onAction="#chooseCancel" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="C" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="plusminus" mnemonicParsing="false" onAction="#choosePlusMinus" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="+/-" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="modulus" mnemonicParsing="false" onAction="#chooseModulus" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="\%" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="divide" mnemonicParsing="false" onAction="#chooseDivision" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="÷" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseLeftParen" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #191970;" text="(" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseRightParen" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #191970;" text=")" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="fibonacci" mnemonicParsing="false" onAction="#fibonacciSequence" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #191970;" text="Fibonacci Sequence" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="seven" mnemonicParsing="false" onAction="#chooseSeven" prefHeight="50.0" prefWidth="100.0" text="7">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="eight" mnemonicParsing="false" onAction="#chooseEight" prefHeight="50.0" prefWidth="100.0" text="8">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="nine" mnemonicParsing="false" onAction="#chooseNine" prefHeight="50.0" prefWidth="100.0" text="9">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="multiply" mnemonicParsing="false" onAction="#chooseMultiply" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="*" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseDegrees" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="Deg" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseXSquared" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="x²" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseXCubed" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="x³" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseXPowerOf" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="x^n" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseCubeRoot" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="³√" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#choose10PowerOfX" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="10^x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="four" mnemonicParsing="false" onAction="#chooseFour" prefHeight="50.0" prefWidth="100.0" text="4">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="five" mnemonicParsing="false" onAction="#chooseFive" prefHeight="50.0" prefWidth="100.0" text="5">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="six" mnemonicParsing="false" onAction="#chooseSix" prefHeight="50.0" prefWidth="100.0" text="6">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="minus" mnemonicParsing="false" onAction="#chooseMinus" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="-" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseRadians" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="Rad" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseSecant" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="sec" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseCosecant" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="cosec" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseCotangent" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="cotan" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseNaturalLog" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="ln" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseLog10" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="log10" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="one" mnemonicParsing="false" onAction="#chooseOne" prefHeight="50.0" prefWidth="100.0" text="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="two" mnemonicParsing="false" onAction="#chooseTwo" prefHeight="50.0" prefWidth="100.0" text="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="three" mnemonicParsing="false" onAction="#chooseThree" prefHeight="50.0" prefWidth="100.0" text="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="plus" mnemonicParsing="false" onAction="#choosePlus" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseRecursion" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="x!" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseSin" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="sin" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseCos" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="cos" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseTan" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="tan" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseEularsConstant" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="ℇ" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseSqrroot" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="√" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="zero" mnemonicParsing="false" onAction="#chooseZero" prefHeight="50.0" prefWidth="193.0" text="0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="point" mnemonicParsing="false" onAction="#choosePoint" prefHeight="50.0" prefWidth="100.0" text=".">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="equals" mnemonicParsing="false" onAction="#chooseEquals" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008C8C;" text="=" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseOneOver" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="1/x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseSin" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="sinh" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseArcCos" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="cosh" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseArcTan" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="tanh" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#choosePI" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="π" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#chooseRand" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #191970;" text="Rand" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Equations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="choicebox" layoutX="288.0" layoutY="64.0" prefHeight="32.0" prefWidth="306.0" />
+                        <TextField fx:id="varInput1" layoutX="134.0" layoutY="183.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="varInput2" layoutX="390.0" layoutY="183.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="varInput3" layoutX="668.0" layoutY="184.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="varInput6" layoutX="668.0" layoutY="264.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="varInput5" layoutX="391.0" layoutY="264.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="varInput4" layoutX="134.0" layoutY="264.0" prefHeight="44.0" prefWidth="100.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="calculateBttn" layoutX="383.0" layoutY="349.0" mnemonicParsing="false" onAction="#calForm" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #008C8C;" text="Calculate" textFill="WHITE" />
+                        <Label layoutX="193.0" layoutY="72.0" text="Select Formula:" />
+                        <TextField fx:id="formulaText" disable="true" editable="false" layoutX="288.0" layoutY="103.0" prefHeight="44.0" prefWidth="306.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="228.0" layoutY="117.0" text="Formula:" />
+                        <Label fx:id="varLbl1" layoutX="42.0" layoutY="198.0" text="Label" />
+                        <Label fx:id="varLbl4" layoutX="42.0" layoutY="277.0" text="Label" />
+                        <Label fx:id="varLbl5" layoutX="311.0" layoutY="278.0" text="Label" />
+                        <Label fx:id="varLbl2" layoutX="311.0" layoutY="197.0" text="Label" />
+                        <Label fx:id="varLbl6" layoutX="598.0" layoutY="278.0" text="Label" />
+                        <Label fx:id="varLbl3" layoutX="598.0" layoutY="198.0" text="Label" />
+                        <TextField fx:id="equationText" disable="true" editable="false" layoutX="297.0" layoutY="423.0" prefHeight="44.0" prefWidth="306.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="resultText" disable="true" editable="false" layoutX="297.0" layoutY="485.0" prefHeight="44.0" prefWidth="306.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="239.0" layoutY="437.0" text="Equation: " />
+                        <Label layoutX="246.0" layoutY="499.0" text="Result: " />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Graphing">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                
+                        <Button fx:id="popUp" layoutX="255.0" layoutY="285.0" mnemonicParsing="false" onAction="#popUpWindow" prefHeight="66.0" prefWidth="367.0" style="-fx-background-color: #008C8C;" text="Graph Function" textFill="WHITE" />
+                        <TextField fx:id="fxEnter" layoutX="302.0" layoutY="171.0" prefHeight="62.0" prefWidth="259.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="239.0" layoutY="181.0" text="f(x):">
+                           <font>
+                             <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="minX" layoutX="729.0" layoutY="108.0" prefHeight="62.0" prefWidth="151.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="maxX" layoutX="729.0" layoutY="222.0" prefHeight="62.0" prefWidth="151.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="637.0" layoutY="119.0" text="Min(x):">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="637.0" layoutY="233.0" text="Max(x):">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="FFT">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="fileChooser" layoutX="105.0" layoutY="44.0" onAction="#fileChoiceAction" prefHeight="51.0" prefWidth="436.0" />
+                        <Button fx:id="fftFromFile" layoutX="656.0" layoutY="55.0" mnemonicParsing="false" onAction="#fftFromFileAction" prefHeight="64.0" prefWidth="168.0" style="-fx-background-color: #191970;" text="FFT from File" textFill="#fffdfd">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="fftFromMic" layoutX="656.0" layoutY="157.0" mnemonicParsing="false" onAction="#fftFromMicAction" prefHeight="64.0" prefWidth="168.0" style="-fx-background-color: #191970;" text="FFT From Microphone" textFill="#fffdfd">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="dctAudio" layoutX="656.0" layoutY="300.0" mnemonicParsing="false" onAction="#dctAudioAction" prefHeight="64.0" prefWidth="168.0" style="-fx-background-color: black;" text="DCT Audio" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Sets">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="900.0">
+                           <children>
+                              <TextField fx:id="resultsOfPerm" alignment="CENTER" prefHeight="100.0" prefWidth="901.0">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <RadioButton fx:id="permutation" layoutX="310.0" layoutY="159.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" text="Permutation">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="notAllowed" layoutX="310.0" layoutY="252.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" text="Not Allowed">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="allowed" layoutX="532.0" layoutY="252.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" text="Allowed">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="combination" layoutX="532.0" layoutY="159.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" text="Combination">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <Label layoutX="65.0" layoutY="161.0" text="Choose Type:" textFill="#e59400">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="79.0" layoutY="254.0" text="Repetition:" textFill="#e59400">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nNumber" layoutX="125.0" layoutY="350.0" prefHeight="25.0" prefWidth="251.0" />
+                        <TextField fx:id="rNumber" layoutX="496.0" layoutY="350.0" prefHeight="25.0" prefWidth="251.0" />
+                        <Label layoutX="56.0" layoutY="340.0" text="n =">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="427.0" layoutY="340.0" text="r =">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="calculatePerm" layoutX="302.0" layoutY="477.0" mnemonicParsing="false" onAction="#calculateSets" prefHeight="39.0" prefWidth="231.0" style="-fx-background-color: #e59400;" text="Calculate" textFill="WHITE" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Compression">
+                              <content>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0">
+                     <children>
+                     
+                     <VBox xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+					   <children>
+					      <HBox prefHeight="360.0" prefWidth="800.0">
+					         <children>
+					            <LineChart fx:id="chartFourier" prefHeight="360.0" prefWidth="800.0">
+					              <xAxis>
+					                <NumberAxis side="BOTTOM" />
+					              </xAxis>
+					              <yAxis>
+					                <NumberAxis side="LEFT" />
+					              </yAxis>
+					            </LineChart>
+					         </children></HBox>
+					      <HBox prefHeight="40.0" prefWidth="800.0">
+					         <children>
+					            <Label prefHeight="30.0" prefWidth="36.0" text=" from" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x1Fourier" />
+					            <Label prefHeight="30.0" prefWidth="16.0" text="to" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x2Fourier" />
+					            <Label prefHeight="30.0" prefWidth="32.0" text="f(x)=" />
+					            <TextField fx:id="f1Fourier" prefHeight="30.0" prefWidth="100.0" />
+					            <Label prefHeight="30.0" prefWidth="36.0" text="from" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x3Fourier" />
+					            <Label prefHeight="30.0" prefWidth="16.0" text="to" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x4Fourier" />
+					            <Label prefHeight="30.0" prefWidth="32.0" text="f(x)=" />
+					            <TextField fx:id="f2Fourier" prefHeight="30.0" prefWidth="100.0" />
+					            <Label prefHeight="30.0" prefWidth="36.0" text="from" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x5Fourier" />
+					            <Label prefHeight="30.0" prefWidth="16.0" text="to" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="x6Fourier" />
+					            <Label prefHeight="30.0" prefWidth="32.0" text="f(x)=" />
+					            <TextField fx:id="f3Fourier" prefHeight="30.0" prefWidth="100.0" />
+					         </children>
+					      </HBox>
+
+					      <HBox prefHeight="40.0" prefWidth="800.0">
+					         <children>
+					            <Label prefHeight="30.0" prefWidth="47.0" text=" Ak(x)=" />
+					            <TextField fx:id="axFourier" prefHeight="30.0" prefWidth="350.0" />
+					            <Label prefHeight="30.0" prefWidth="47.0" text=" Bk(x)=" />
+					            <TextField fx:id="bxFourier" prefHeight="30.0" prefWidth="350.0" />
+					         </children>
+					      </HBox>
+					      <HBox prefHeight="40.0" prefWidth="800.0">
+					         <children>
+					            <Label prefHeight="30.0" prefWidth="79.0" text="1/2 Cycle L=" />
+					            <TextField fx:id="lFourier" prefHeight="30.0" prefWidth="105.0" />
+					            <Label prefHeight="30.0" prefWidth="120.0" text=" " />
+					            <Label prefHeight="30.0" prefWidth="79.0" text="            A0=" />
+					            <TextField fx:id="a0Fourier" prefHeight="30.0" prefWidth="105.0" />
+					            <Label prefHeight="30.0" prefWidth="120.0" text=" " />
+					            <Label prefHeight="30.0" prefWidth="79.0" text="       Terms=" />
+					            <TextField fx:id="termsFourier" prefHeight="30.0" prefWidth="105.0" />
+					         </children>
+					      </HBox>
+					      <HBox prefHeight="40.0" prefWidth="800.0">
+					         <children>
+					            <Label prefHeight="30.0" prefWidth="123.0" text="Show X value from" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="xMinFourier" />
+					            <Label prefHeight="30.0" prefWidth="23.0" text="to" />
+					            <TextField prefHeight="30.0" prefWidth="40.0" fx:id="xMaxFourier" />
+					            <Label prefHeight="30.0" prefWidth="86.0" />
+					            <Button fx:id="plotFourier" mnemonicParsing="false" onAction="#clickPlotFourier" prefHeight="30.0" prefWidth="120.0" text="Plot" />
+					           <Button fx:id="resetFourier1" mnemonicParsing="false" onAction="#clickResetFourier1" prefHeight="30.0" prefWidth="120.0" text="Reset1" />
+					            <Button fx:id="resetFourier2" mnemonicParsing="false" onAction="#clickResetFourier2" prefHeight="30.0" prefWidth="120.0" text="Reset2" />
+					            <Button fx:id="resetFourier3" mnemonicParsing="false" onAction="#clickResetFourier3" prefHeight="30.0" prefWidth="120.0" text="Reset3" />
+								
+					         </children>
+					      </HBox>
+					      <HBox prefHeight="40.0" prefWidth="800.0">
+					         <children>				         
+					            <Label prefHeight="30.0" prefWidth="10.0" />
+					            <Button fx:id="matrixFourier" mnemonicParsing="false" onAction="#popJFrame" prefHeight="30.0" prefWidth="120.0" text="Matrix" />
+					             <Label prefHeight="30.0" prefWidth="85.0" />
+					             <ImageView fx:id="imageFourier" pickOnBounds="true" preserveRatio="true">
+					               
+					            </ImageView>
+					         </children>
+					      </HBox>
+					      
+					   </children>
+					</VBox>  
+					 </children></AnchorPane>
+               </content>
+				               <!--
+				               <content>
+				                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+				                     <children>
+				                        <Button fx:id="popUpJFrame" layoutX="378.0" layoutY="240.0" mnemonicParsing="false" onAction="#popJFrame" prefHeight="92.0" prefWidth="145.0" style="-fx-background-color: #008C8C;" text="Compression Matrix" textFill="#fffefe" />
+				                     </children></AnchorPane>
+				               </content>
+				               -->
+			</Tab>
+				
+            
+            <Tab text="History">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="historyList" layoutX="251.0" layoutY="14.0" prefHeight="547.0" prefWidth="366.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

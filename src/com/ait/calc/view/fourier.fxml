@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #bdbdbd;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ait.calc.view.Driver">
+   <children>
+      <HBox prefHeight="232.0" prefWidth="600.0" />
+      <HBox prefHeight="35.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="36.0" text=" from" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="16.0" text="to" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="32.0" text="f(x)=" />
+            <TextField prefHeight="23.0" prefWidth="61.0" />
+            <Label prefHeight="23.0" prefWidth="36.0" text="from" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="16.0" text="to" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="32.0" text="f(x)=" />
+            <TextField prefHeight="23.0" prefWidth="63.0" />
+            <Label prefHeight="23.0" prefWidth="36.0" text="from" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="16.0" text="to" />
+            <TextField prefHeight="23.0" prefWidth="24.0" />
+            <Label prefHeight="23.0" prefWidth="32.0" text="f(x)=" />
+            <TextField prefHeight="23.0" prefWidth="67.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="35.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="28.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fourier.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="15.0" prefWidth="265.0" />
+            <Button mnemonicParsing="false" text="Matrix" />
+         </children>
+      </HBox>
+      <HBox prefHeight="32.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="24.0" prefWidth="47.0" text=" Ak(x)=" />
+            <TextField prefHeight="23.0" prefWidth="247.0" />
+            <Label prefHeight="24.0" prefWidth="47.0" text=" Bk(x)=" />
+            <TextField prefHeight="23.0" prefWidth="254.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="33.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="79.0" text="1/2 Cycle L=" />
+            <TextField prefHeight="23.0" prefWidth="105.0" />
+            <Label prefHeight="23.0" prefWidth="79.0" text="            A0=" />
+            <TextField prefHeight="23.0" prefWidth="105.0" />
+            <Label prefHeight="23.0" prefWidth="79.0" text="       Terms=" />
+            <TextField prefHeight="23.0" prefWidth="105.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="35.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="123.0" text="Show X value from" />
+            <TextField prefHeight="23.0" prefWidth="47.0" />
+            <Label prefHeight="25.0" prefWidth="23.0" text="to" />
+            <TextField prefHeight="23.0" prefWidth="47.0" />
+            <Label prefHeight="17.0" prefWidth="136.0" />
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="107.0" text="Plot" />
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="114.0" text="Reset" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
